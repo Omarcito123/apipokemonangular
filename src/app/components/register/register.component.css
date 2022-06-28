@@ -1,0 +1,106 @@
+.divLogin {
+    background-color: #FFC300;
+    border-radius: 8px;
+    padding: 10px;
+    width: 400px;
+}
+
+.divRegister {
+    border-radius: 8px;
+    padding: 10px;
+    width: 400px;
+}
+
+.hola {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    color: midnightblue;
+    text-decoration: none;
+}
+
+.config {
+    font-size: 25px;
+    color: midnightblue;
+    text-decoration: none;
+}
+
+.queremos {
+    font-weight: bold;
+    font-size: 20px;
+    color: darkgrey;
+}
+
+.p {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    text-align: center;
+}
+
+.a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    text-align: center;
+}
+
+.imgRedonda {
+    width: 250px;
+    height: 250px;
+    border-radius: 160px;
+    border: 10px solid white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.centre {
+    display: flex;
+    justify-content: center;
+}
+
+.divPokemon {
+    background-color: hsl(0, 0%, 96.5%);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    float: left;
+    margin-right: 10px;
+}
+
+.pokemonName {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.pokemonType {
+    font-size: 16px;
+    text-align: center;
+}
+
+.mat-form-field {
+    width: 400px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    background-color: #3f51b5;
+    color: white;
+    display: inline-block;
+    padding: 0px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    line-height: 36px;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}

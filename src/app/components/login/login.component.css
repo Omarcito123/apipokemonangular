@@ -1,0 +1,42 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
+
+button {
+    padding-top: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 5px;
+    color: white !important;
+    border-color: white !important;
+}
+
+.titulo {
+    font-weight: bold;
+    text-align: center;
+}
+
+.register {
+    margin-top: 25px !important;
+    color: white !important;
+    text-decoration: underline;
+}
+
+.divLogin {
+    background-color: #FFC300;
+    padding-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 80px;
+    border-radius: 8px;
+}

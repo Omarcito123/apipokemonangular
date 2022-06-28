@@ -1,0 +1,19 @@
+<mat-toolbar class="tolbar">
+    <mat-toolbar-row>
+        <div class="col-lg-6">
+            <img alt="icono" width="100" src="./assets/img/TituloUniversoPokémon.png">
+        </div>
+        <div class="col-lg-6">
+            <div style="float: right;">
+                <mat-icon class="offSesion" (click)="openDialogLogout()">power_settings_new</mat-icon>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+    <mat-sidenav-content>
+        <div style="height: 95vh; overflow: auto;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

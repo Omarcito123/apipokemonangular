@@ -1,0 +1,25 @@
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <form class="example-form">
+            <div class="divLogin">
+                <h1 class="titulo">Ingresa a tu perfil</h1>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Usuario" name="username" type="text" [(ngModel)]="userLogin.username">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput placeholder="Contraseña" name="password" type="password" [(ngModel)]="userLogin.password">
+                </mat-form-field>
+
+                <div class="col text-center">
+                    <button mat-stroked-button (click)="login(userLogin)">Ingresar</button>
+                </div>
+                <div class="col text-center">
+                    <h3 class="register" (click)="register()">Registrate aqui</h3>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

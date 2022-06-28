@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-lg-5">
+        <div>
+            <a class="hola" *ngIf="firstStep">¡Hola! </a><a *ngIf="firstStep" class="config">configuraremos tu perfil</a>
+            <p class="queremos" *ngIf="firstStep">queremos conocerte mejor</p>
+            <a *ngIf="secondStep" class="config">¡Ya casi terminamos!</a>
+            <p class="queremos" *ngIf="secondStep">Revisa la informacion, y completa lo solicitado</p>
+            <div class="divLogin">
+                <div>
+                    <p class="p" *ngIf="firstStep">Imagen de perfil</p>
+                    <p class="p" *ngIf="secondStep">{{this.perfil.name}}</p>
+                </div>
+                <br>
+                <div class="centre">
+                    <img alt="icono" class='imgRedonda' width="100" [src]="imagePath">
+                </div>
+                <br>
+                <div class="col text-center" *ngIf="firstStep">
+                    <label class="custom-file-upload mat-button-wrapper"><input type="file" (change)="onFileChange($event)" />Inventario Excel</label>
+                </div>
+                <br>
+                <div *ngIf="secondStep">
+                    <a class="a">Pasatiempo: </a><a>{{perfil.hobby}}</a>
+                    <br>
+                    <a class="a">Edad: </a><a>{{age}} años</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7" *ngIf="firstStep">
+        <h1 class="h1">Tu informacion</h1>
+        <p>Completa la siguiente imformacion para completar tu perfil</p>
+        <form class="example-form">
+            <div class="divRegister">
+                <h1 class="titulo">Ingresa a tu perfil</h1>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput placeholder="Nombre" name="name" type="text" class="input" [(ngModel)]="perfil.name">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Pasatiempo</mat-label>
+                    <input matInput placeholder="Pasatiempo favorito" name="hobby" type="text" class="input" [(ngModel)]="perfil.hobby">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput readonly [matDatepicker]="picker" name="birthday" [(ngModel)]="perfil.birthday" (blur)="selectDate()">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Numero de documento</mat-label>
+                    <input matInput placeholder="Numero de documento" name="documento" type="text" [(ngModel)]="perfil.document_number">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Usuario" name="username" type="text" [(ngModel)]="perfil.username">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput placeholder="Contraseña" name="password" type="password" [(ngModel)]="perfil.password">
+                </mat-form-field>
+
+                <div class="col text-center" style="margin-bottom: 30px;">
+                    <button mat-stroked-button (click)="continue()">Continuar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-7" *ngIf="secondStep && pokemonList">
+        <h1 class="h1">Pokemon</h1>
+        <p>Selecciona 3 pokemon para que sean parte de tu equipo</p>
+        <div class="row">
+            <div class="col-lg-12">
+                <div *ngFor="let item of pokemonList.pokemon; let i = index" [ngStyle]="{'background-color' : item.order === pokemon1 ? 'yellow' : item.order === pokemon2 ? 'yellow' : item.order === pokemon3 ? 'yellow' : 'hsl(0, 0%, 96.5%)'}" class="divPokemon col-lg-3">
+                    <div>
+                        <div class="row" (click)="selectPokemon(item)">
+                            <div class="row justify-content-center align-items-center">
+                                <img [src]="item.sprites.front_default" class="pokemon" alt="Pokemon">
+                                <p class="pokemonName">{{ item.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 50px !important;">
+            <div class="col-lg-4">
+                <button mat-stroked-button *ngIf="pokemonList.previous" (click)="previous(pokemonList.previous)">Anterior</button>
+            </div>
+            <div class="col-lg-5">
+                <button style="float: right;" mat-stroked-button *ngIf="pokemonList.next" (click)="next(pokemonList.next)">Siguiente</button>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 50px !important;">
+            <div class="col-lg-9 text-center">
+                <button mat-stroked-button style="margin-right: 10px;" (click)="back()">Atras</button>
+                <button mat-stroked-button *ngIf="this.pokemonSelectList.length === 3" (click)="savePerfil()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

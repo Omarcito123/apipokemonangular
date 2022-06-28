@@ -1,0 +1,53 @@
+.divLogin {
+    background-color: #FFC300;
+    border-radius: 8px;
+    padding: 10px;
+    width: 400px;
+}
+
+.h1 {
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+.imgRedonda {
+    width: 250px;
+    height: 250px;
+    border-radius: 160px;
+    border: 10px solid white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.centre {
+    display: flex;
+    justify-content: center;
+}
+
+.divPokemon {
+    background-color: hsl(0, 0%, 96.5%);
+    border-radius: 8px;
+    padding: 10px;
+    width: 400px;
+    margin-bottom: 20px;
+    width: 600px;
+}
+
+.pokemonName {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.pokemonType {
+    font-size: 16px;
+    text-align: center;
+}

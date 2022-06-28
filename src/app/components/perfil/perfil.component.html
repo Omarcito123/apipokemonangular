@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-5">
+        <div>
+            <h1 class="h1">¡Hola {{userSesion.name}}!</h1>
+            <div class="divLogin">
+                <div>
+                    <a class="a">Entrenador</a>
+                    <img alt="icono" style="float: right;" width="100" src="./assets/img/medalla.png">
+                </div>
+                <br>
+                <div class="centre">
+                    <img [src]="imagePath" class='imgRedonda' />
+                </div>
+                <br>
+                <a class="a">Pasatiempo: </a><a>{{userSesion.hobby}}</a>
+                <br>
+                <a class="a">Edad: </a><a>{{age}} años</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <h1 class="h1">Mis pokemon</h1>
+        <div>
+            <div *ngFor="let item of pokemonList; let i = index">
+                <div class="divPokemon">
+                    <div class="row">
+                        <div class="col-lg-6 row justify-content-center align-items-center">
+                            <img [src]="item.image" class="pokemon" alt="Pokemon">
+                            <p class="pokemonName">{{ item.name }}</p>
+                            <p class="pokemonType">{{ item.pokemon_type }}</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <a>HP</a>
+                            <mat-progress-bar mode="determinate" [value]="item.hp"></mat-progress-bar>
+                            <br>
+                            <a>Ataque</a>
+                            <mat-progress-bar mode="determinate" [value]="item.attack"></mat-progress-bar>
+                            <br>
+                            <a>Defensa</a>
+                            <mat-progress-bar mode="determinate" [value]="item.defense"></mat-progress-bar>
+                            <br>
+                            <a>Ataque especial</a>
+                            <mat-progress-bar mode="determinate" [value]="item.special_attack"></mat-progress-bar>
+                            <br>
+                            <a>Defensa especial</a>
+                            <mat-progress-bar mode="determinate" [value]="item.special_defense"></mat-progress-bar>
+                            <br>
+                            <a>Velocidad</a>
+                            <mat-progress-bar mode="determinate" [value]="item.speed"></mat-progress-bar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
